@@ -1,6 +1,6 @@
-import React from 'react'
-import profile from "../assets/profile.jpg"
-import { motion } from 'framer-motion'
+import React from "react";
+import profile from "../assets/profile.jpg";
+import { motion } from "framer-motion";
 
 // About Component - Personal background and introduction
 const About = () => {
@@ -11,7 +11,7 @@ const About = () => {
       opacity: 1,
       transition: { duration: 0.8 },
     },
-  }
+  };
 
   // Animation variants for text elements - Slide in from left
   const textVariants = {
@@ -19,9 +19,9 @@ const About = () => {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.8, ease: 'easeOut' },
+      transition: { duration: 0.8, ease: "easeOut" },
     },
-  }
+  };
 
   // Animation for the image - Slide in from right with rotation
   const imageVariants = {
@@ -30,9 +30,9 @@ const About = () => {
       opacity: 1,
       x: 0,
       rotate: 0,
-      transition: { duration: 0.8, ease: 'easeOut' },
+      transition: { duration: 0.8, ease: "easeOut" },
     },
-  }
+  };
 
   return (
     <section id="about" className="about">
@@ -43,7 +43,7 @@ const About = () => {
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           About <span className="highlight">Me</span>
         </motion.h2>
@@ -55,17 +55,22 @@ const About = () => {
             variants={textVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: true, margin: "-100px" }}
           >
             <p className="about-description">
-              I'm a dedicated Frontend React Developer with a passion for creating engaging
-              and user-friendly web applications. With expertise in modern JavaScript,
-              React, and CSS, I transform ideas into beautiful digital experiences.
+              I'm a Full Stack Developer skilled in the MERN stack, focused on
+              building scalable web applications and seamless user experiences.
+              I work across both frontend and backend, and I'm currently
+              exploring real-time systems and AI integrations.
             </p>
 
             {/* Key highlights as animated list */}
             <motion.div className="about-highlights">
-              {['Problem Solver', 'UI/UX Enthusiast', 'Continuous Learner'].map((item, i) => (
+              {[
+                "MERN Stack Developer",
+                "Real-time & Scalable Apps",
+                "AI-powered Solutions",
+              ].map((item, i) => (
                 <motion.div
                   key={item}
                   className="highlight-chip"
@@ -87,12 +92,12 @@ const About = () => {
             variants={imageVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: true, margin: "-100px" }}
           >
             <div className="image-placeholder">
               <motion.div
                 animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 className="rotating-border"
               />
               <img src={profile} alt="Profile" />
@@ -101,7 +106,7 @@ const About = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;

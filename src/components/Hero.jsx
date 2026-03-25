@@ -57,9 +57,9 @@ const Hero = () => {
 
           {/* Role description */}
           <motion.p variants={itemVariants} className="hero-description">
-            A passionate <strong>Frontend React Developer</strong> crafting beautiful and
-            interactive web experiences
+            A passionate <strong>Full Stack Developer (MERN)</strong> building scalable web applications and real-time experiences, with a growing focus on AI-powered solutions and modern web technologies.
           </motion.p>
+          
 
           {/* Call to action button with hover effect */}
           <motion.button

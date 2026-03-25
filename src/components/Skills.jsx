@@ -1,5 +1,5 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from "react";
+import { motion } from "framer-motion";
 
 // Skills Component - Display technical skills with animations
 const Skills = () => {
@@ -13,7 +13,7 @@ const Skills = () => {
         delayChildren: 0.2,
       },
     },
-  }
+  };
 
   // Animation variants for individual skill card - Scale and fade
   const skillVariants = {
@@ -21,25 +21,33 @@ const Skills = () => {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.5, ease: 'easeOut' },
+      transition: { duration: 0.5, ease: "easeOut" },
     },
-  }
+  };
 
   // Skills data structure - Organized by category
   const skillsData = [
     {
-      category: 'Frontend',
-      skills: ['React', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS'],
+      category: "Frontend",
+      skills: ["React", "JavaScript", "CSS3", "Tailwind CSS"],
     },
     {
-      category: 'Tools & Libraries',
-      skills: ['Framer Motion', 'Redux', 'Git', 'Webpack', 'Vite'],
+      category: "Tools & Libraries",
+      skills: ["Framer Motion", "Gsap", "Redux", "Git", "SASS"],
     },
     {
-      category: 'Design',
-      skills: ['Figma', 'UI/UX Design', 'Responsive Design', 'Animation'],
+      category: "Design",
+      skills: ["Figma", "UI/UX Design", "Responsive Design", "Animation"],
     },
-  ]
+    {
+      category: "Backend",
+      skills: ["Node.js", "Express.js", "MongoDB", "Mongoose", "REST APIs"],
+    },
+    {
+      category: "Advanced / Learning",
+      skills: ["Socket.io", "LangChain", "AI Integration"],
+    },
+  ];
 
   return (
     <section id="skills" className="skills">
@@ -49,7 +57,7 @@ const Skills = () => {
           className="section-title"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
           My <span className="highlight">Skills</span>
@@ -61,7 +69,7 @@ const Skills = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           {skillsData.map((skillGroup, groupIndex) => (
             <motion.div
@@ -87,7 +95,7 @@ const Skills = () => {
                     {/* Skill badge with animated background */}
                     <motion.span
                       className="skill-badge"
-                      whileHover={{ backgroundColor: '#4f46e5', color: '#fff' }}
+                      whileHover={{ backgroundColor: "#4f46e5", color: "#fff" }}
                     >
                       {skill}
                     </motion.span>
@@ -110,7 +118,7 @@ const Skills = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;
