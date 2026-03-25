@@ -119,7 +119,7 @@ const Contact = () => {
 
             {/* Contact details with hover animations */}
             <div className="contact-details">
-              {contactInfo.map((info, i) => (
+              {contactInfo.map((info) => (
                 <motion.div
                   key={info.label}
                   className="contact-item"
@@ -137,7 +137,7 @@ const Contact = () => {
 
             {/* Social links */}
             <motion.div className="social-links" variants={itemVariants}>
-              {socialLinks.map((social, i) => (
+              {socialLinks.map((social) => (
                 <motion.a
                   key={social.name}
                   href={social.url}
