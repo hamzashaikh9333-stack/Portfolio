@@ -45,7 +45,7 @@ const Skills = () => {
     },
     {
       category: "Advanced / Learning",
-      skills: ["Socket.io", "LangChain", "AI Integration"],
+      skills: ["Socket.io", "LangChain", "AI Integration", "Tavily"],
     },
   ];
 

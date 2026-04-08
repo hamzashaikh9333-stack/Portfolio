@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
 // Navigation Component - Sticky header with smooth scrolling
 const Navigation = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   // Animation variant for navigation items fade-in effect
   const navItemVariants = {
     hidden: { opacity: 0, y: -10 },
@@ -18,6 +20,11 @@ const Navigation = () => {
 
   // Navigation items array - Links to different sections
   const navItems = ['Home', 'About', 'Skills', 'Projects', 'Contact']
+
+  // Close menu when link is clicked
+  const handleLinkClick = () => {
+    setIsMenuOpen(false)
+  }
 
   return (
     <motion.nav
@@ -37,7 +44,7 @@ const Navigation = () => {
         </motion.div>
 
         {/* Navigation Links */}
-        <ul className="nav-links">
+        <ul className={`nav-links ${isMenuOpen ? 'mobile-menu-open' : ''}`}>
           {navItems.map((item, i) => (
             <motion.li
               key={item}
@@ -46,7 +53,7 @@ const Navigation = () => {
               initial="hidden"
               animate="visible"
             >
-              <a href={`#${item.toLowerCase()}`}>
+              <a href={`#${item.toLowerCase()}`} onClick={handleLinkClick}>
                 <motion.span whileHover={{ color: '#4f46e5' }}>
                   {item}
                 </motion.span>
@@ -54,6 +61,18 @@ const Navigation = () => {
             </motion.li>
           ))}
         </ul>
+
+        {/* Hamburger Menu Button */}
+        <motion.button
+          className={`hamburger-menu ${isMenuOpen ? 'active' : ''}`}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          whileTap={{ scale: 0.95 }}
+          aria-label="Toggle navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </motion.button>
       </div>
     </motion.nav>
   )

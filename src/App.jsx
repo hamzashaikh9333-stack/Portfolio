@@ -31,7 +31,7 @@ function App() {
 
       {/* Footer */}
       <footer className="footer">
-        <p>© 2024 Sameer - Frontend React Developer. All rights reserved.</p>
+        <p>© 2026 Sameer - MERN Stack Developer.</p>
       </footer>
     </div>
   )
