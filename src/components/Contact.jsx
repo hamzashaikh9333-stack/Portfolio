@@ -12,10 +12,6 @@ const Contact = () => {
       name: "GitHub",
       url: "https://github.com/hamzashaikh9333-stack",
     },
-    {
-      name: "Twitter",
-      url: "https://twitter.com/your-username",
-    },
   ];
   // State for form inputs
   const [formData, setFormData] = useState({

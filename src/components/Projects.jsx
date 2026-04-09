@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import { motion } from 'framer-motion'
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 // Projects Component - Showcase portfolio projects with hover effects
 const Projects = () => {
   // State for tracking which project is hovered
-  const [hoveredProject, setHoveredProject] = useState(null)
+  const [hoveredProject, setHoveredProject] = useState(null);
 
   // Animation variants for container - Stagger child animations
   const containerVariants = {
@@ -16,7 +16,7 @@ const Projects = () => {
         delayChildren: 0.2,
       },
     },
-  }
+  };
 
   // Animation variants for project cards - Scale and fade
   const projectVariants = {
@@ -24,49 +24,32 @@ const Projects = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
-  }
+  };
 
   // Projects data - Array of sample projects
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
+      title: "wiggle Ai - AI-Powered Chatbot",
       description:
-        'A full-featured e-commerce platform built with React and Redux for state management.',
-      tech: ['React', 'Redux', 'Tailwind CSS', 'Node.js'],
-      image: '🛍️',
-      link: '#',
+        "An AI-powered chatbot designed to provide seamless customer support and engagement.",
+      tech: ["React", "Node.js", "langchain", "WebSocket", "Tavily"],
+      image: "🤖",
+      link: "https://wiggle-ai.netlify.app",
     },
-    {
-      id: 2,
-      title: 'Task Management App',
-      description:
-        'A collaborative task management application with real-time updates and animations.',
-      tech: ['React', 'Firebase', 'Framer Motion', 'Material UI'],
-      image: '✓',
-      link: '#',
-    },
+
     {
       id: 3,
-      title: 'Portfolio Website',
+      title: "Portfolio Website",
       description:
-        'An animated portfolio showcasing projects with smooth transitions and interactions.',
-      tech: ['React', 'Framer Motion', 'CSS3', 'Vite'],
-      image: '💼',
-      link: '#',
+        "An animated portfolio showcasing projects with smooth transitions and interactions.",
+      tech: ["React", "Framer Motion", "CSS3", "Vite"],
+      image: "💼",
+      link: "#",
     },
-    {
-      id: 4,
-      title: 'Weather App',
-      description:
-        'Real-time weather application with beautiful UI and animated weather icons.',
-      tech: ['React', 'API', 'Axios', 'SVG Animations'],
-      image: '⛅',
-      link: '#',
-    },
-  ]
+  ];
 
   return (
     <section id="projects" className="projects">
@@ -76,7 +59,7 @@ const Projects = () => {
           className="section-title"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
           My <span className="highlight">Projects</span>
@@ -88,7 +71,7 @@ const Projects = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           {projects.map((project) => (
             <motion.div
@@ -128,7 +111,11 @@ const Projects = () => {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.05 }}
-                      whileHover={{ scale: 1.15, backgroundColor: '#4f46e5', color: '#fff' }}
+                      whileHover={{
+                        scale: 1.15,
+                        backgroundColor: "#4f46e5",
+                        color: "#fff",
+                      }}
                     >
                       {tech}
                     </motion.span>
@@ -150,7 +137,7 @@ const Projects = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
